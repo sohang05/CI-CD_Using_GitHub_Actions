@@ -12,6 +12,7 @@ jobs:
     env:
       AWS_REGION: ${{ secrets.AWS_REGION }}
       ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+      IMAGE_TAG: ${{ github.sha }}
 
     steps:
 
@@ -35,7 +36,6 @@ jobs:
       # STEP 4
       - name: Build Docker Image
         run: |
-          IMAGE_TAG=${{ github.sha }}
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG ./app
 
       # STEP 5

@@ -1,17 +1,15 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Environment files
+.env
+
 # Python
 __pycache__/
 *.pyc
 
-# Env files
-.env
-
-# Terraform
-.terraform/
-*.tfstate
-*.tfstate.backup
-
-# Docker
-*.log
-
-# OS
+# Mac/Linux
 .DS_Store

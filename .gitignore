@@ -6,6 +6,8 @@ __pycache__/
 .env
 
 # Terraform
+terraform/terraform.tfvars
+*.tfvars
 .terraform/
 *.tfstate
 *.tfstate.backup

@@ -35,19 +35,20 @@ jobs:
       # STEP 4
       - name: Build Docker Image
         run: |
-          docker build -t $ECR_REPOSITORY ./app
+          IMAGE_TAG=${{ github.sha }}
+          docker build -t $ECR_REPOSITORY:$IMAGE_TAG ./app
 
       # STEP 5
       - name: Tag Docker Image
         run: |
-          docker tag $ECR_REPOSITORY:latest \
-          ${{ secrets.ECR_REGISTRY }}/$ECR_REPOSITORY:latest
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG \
+          ${{ secrets.ECR_REGISTRY }}/$ECR_REPOSITORY:$IMAGE_TAG
 
       # STEP 6
       - name: Push Docker Image to ECR
         run: |
           docker push \
-          ${{ secrets.ECR_REGISTRY }}/$ECR_REPOSITORY:latest
+          ${{ secrets.ECR_REGISTRY }}/$ECR_REPOSITORY:$IMAGE_TAG
 
       # STEP 7
       - name: Force ECS Deployment

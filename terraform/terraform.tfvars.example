@@ -1,0 +1,5 @@
+aws_region     = "us-east-1"
+project_name   = "ci-cd-demo"
+container_port = 5000
+
+ecr_image_url  = "your-ecr-url"

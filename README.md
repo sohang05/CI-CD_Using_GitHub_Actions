@@ -314,13 +314,7 @@ This project helped demonstrate:
 * Deployment rollback strategies
 * Git branching workflows
 * Cloud-native deployment lifecycle
-
----
-
-# 📌 Resume Description
-
-Designed and implemented a production-style CI/CD pipeline using GitHub Actions, Terraform, Docker, AWS ECS Fargate, ALB, and ECR with immutable deployments, automatic rollback, and remote Terraform state management.
-
+  
 ---
 
 # 👨‍💻 Author

@@ -1,0 +1,39 @@
+{
+  "family": "cicd-ecs-github-actions-task",
+  "executionRoleArn": "arn:aws:iam::474150620111:role/cicd-ecs-github-actions-ecs-task-execution-role",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "cicd-ecs-github-actions-container",
+      "image": "474150620111.dkr.ecr.us-east-1.amazonaws.com/myflaskapp:latest",
+      "cpu": 0,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "hostPort": 5000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "systemControls": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/cicd-ecs-github-actions",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "volumes": [],
+  "placementConstraints": []
+}

@@ -44,6 +44,7 @@ Application Load Balancer
       ↓
 Users
 ```
+<img width="1536" height="1024" alt="Architecture_Diagram" src="https://github.com/user-attachments/assets/bbc7b2e1-ada2-4c54-8d97-07474e407bc0" />
 
 ---
 
